@@ -398,7 +398,7 @@ summary {
         if(verbose==TRUE) {print(paste(&quot;approximate y:&quot;, approxy))} #This is a conditional the prints the approxy from the algorithm above for each iteration of the &quot;while loop&quot; if verbose==TRUE
         if(verbose==TRUE) {print(paste(&quot;guess Y:&quot;, newguess))} #This is a conditional the prints the new guess from the algorithm above for for each iteration of the &quot;while loop&quot; if verbose==TRUE
 }
-    if(verbose==TRUE) {print(paste(&quot;final answer:&quot;, round(newguess, 3)))} else{return(newguess)} #This is the &quot;return&quot; line of the function. If verbose==T, it will mark the &quot;newguess&quot; that is associated with an error &lt; tolerance as &quot;final answer&quot; and round it to 3 decimal places. If verbose==F, it will just return the &quot;newguess&quot; that is associated with an error &lt; tolerance.
+    if(verbose==TRUE) {return(paste(&quot;final answer:&quot;, round(newguess, 3)))} else{return(newguess)} #This is the &quot;return&quot; line of the function. If verbose==T, it will mark the &quot;newguess&quot; that is associated with an error &lt; tolerance as &quot;final answer&quot; and round it to 3 decimal places. If verbose==F, it will just return the &quot;newguess&quot; that is associated with an error &lt; tolerance.
 }</code></pre>
 </div>
 <div id="the-function-in-action" class="section level1">
@@ -431,8 +431,8 @@ summary {
 ## [1] &quot;guess Y: 2.00000000002149&quot;
 ## [1] &quot;error: 2.14890327754347e-11&quot;
 ## [1] &quot;approximate y: 1.99999999997851&quot;
-## [1] &quot;guess Y: 2&quot;
-## [1] &quot;final answer: 2&quot;</code></pre>
+## [1] &quot;guess Y: 2&quot;</code></pre>
+<pre><code>## [1] &quot;final answer: 2&quot;</code></pre>
 <p>Now you can try it on some random number:</p>
 <pre class="r"><code>mysqrt(1234567)</code></pre>
 <pre><code>## [1] 1111.111</code></pre>

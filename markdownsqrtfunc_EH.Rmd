@@ -36,7 +36,7 @@ mysqrt <- function(x, myguess=10, tol=.000001, verbose=FALSE) { #This sets the d
 		if(verbose==TRUE) {print(paste("approximate y:", approxy))} #This is a conditional the prints the approxy from the algorithm above for each iteration of the "while loop" if verbose==TRUE
 		if(verbose==TRUE) {print(paste("guess Y:", newguess))} #This is a conditional the prints the new guess from the algorithm above for for each iteration of the "while loop" if verbose==TRUE
 }
-	if(verbose==TRUE) {print(paste("final answer:", round(newguess, 3)))} else{return(newguess)} #This is the "return" line of the function. If verbose==T, it will mark the "newguess" that is associated with an error < tolerance as "final answer" and round it to 3 decimal places. If verbose==F, it will just return the "newguess" that is associated with an error < tolerance.
+	if(verbose==TRUE) {return(paste("final answer:", round(newguess, 3)))} else{return(newguess)} #This is the "return" line of the function. If verbose==T, it will mark the "newguess" that is associated with an error < tolerance as "final answer" and round it to 3 decimal places. If verbose==F, it will just return the "newguess" that is associated with an error < tolerance.
 }
 ```
 # The Function in Action
