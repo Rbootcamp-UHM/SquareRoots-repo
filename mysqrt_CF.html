@@ -413,6 +413,24 @@ body {background-color: lightsalmon;}
 <p>Then we can test out some values to make sure that the function works properly.</p>
 <pre class="r"><code>mysqrt(81)</code></pre>
 <pre><code>## [1] 9</code></pre>
+<p>We can set verbose=TRUE to see the values from each iteration. The return values are logical (if error &lt; tol or not), new guess, and the error from approx y to new guess.</p>
+<pre class="r"><code>mysqrt(81, verbose=TRUE)</code></pre>
+<pre><code>## [1] FALSE
+## [1] 10.2
+## [1] 4.8
+## [1] FALSE
+## [1] 9.070588
+## [1] 1.129412
+## [1] FALSE
+## [1] 9.000275
+## [1] 0.07031357
+## [1] FALSE
+## [1] 9
+## [1] 0.0002746582
+## [1] TRUE
+## [1] 9
+## [1] 4.190952e-09</code></pre>
+<pre><code>## [1] 9</code></pre>
 <p>We can also test negative values.</p>
 <pre class="r"><code>mysqrt(-3)</code></pre>
 <pre><code>## [1] &quot;You can&#39;t take the square root of a negative number.&quot;</code></pre>

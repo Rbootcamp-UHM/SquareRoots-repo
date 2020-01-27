@@ -55,6 +55,12 @@ Then we can test out some values to make sure that the function works properly.
 mysqrt(81)
 ```
 
+We can set verbose=TRUE to see the values from each iteration.
+The return values are logical (if error < tol or not), new guess, and the error from approx y to new guess.
+```{r}
+mysqrt(81, verbose=TRUE)
+```
+
 We can also test negative values.
 ```{r}
 mysqrt(-3)

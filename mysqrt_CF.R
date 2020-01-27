@@ -29,3 +29,19 @@ mysqrt <- function( x=81, tol=.00001, myguess=27, verbose=FALSE){
 	}
 	return( newguess ) #if verbose=FALSE, only return new guess/square root output
 }
+
+
+#Then we can test out some values to make sure that the function works properly.
+mysqrt(81)
+
+#We can set verbose=TRUE to see the values from each iteration.
+#The return values are logical (if error < tol or not), new guess, and the error from approx y to new guess.
+mysqrt(81, verbose=TRUE)
+
+#We can also test negative values.
+mysqrt(-3)
+#As you can see, this will return an error message.
+
+#In addition, we can test zero.
+mysqrt(0)
+#This will also return an error message.
