@@ -386,11 +386,13 @@ p    {color: white; font-family: verdana;}
 
     newguess &lt;- myguess 
     newguess  
+    
+    if (x&gt;0) {
     approxy &lt;- x/newguess 
     approxy 
     newguess &lt;- (newguess+approxy)/2 
     newguess 
-    error = newguess - approxy  
+    error = newguess - approxy 
     error &lt;- abs(error) 
     error &lt; tol 
     if (verbose==T) {print(error &lt; tol)} 
@@ -401,18 +403,20 @@ p    {color: white; font-family: verdana;}
       approxy &lt;- x/newguess  
       newguess &lt;- (newguess+approxy)/2  
       error = newguess - approxy 
-      error &lt;- abs(error)  
+      error &lt;- abs(error)
       if (verbose==T) {print(error &lt; tol)} 
       if (verbose==T) {print(newguess)} 
       if (verbose==T) {print(error)} 
     }
     return( newguess ) 
+    }else print(&quot;BAD. DO NOT USE NEGATIVES&quot;) 
+
 }
 
 
-mysqrt(16) #does not show conditionals</code></pre>
+mysqrt(16) </code></pre>
 <pre><code>## [1] 4</code></pre>
-<pre class="r"><code>mysqrt(16, verbose=TRUE) #shows conditionals</code></pre>
+<pre class="r"><code>mysqrt(16, verbose=TRUE) </code></pre>
 <pre><code>## [1] FALSE
 ## [1] 13.7963
 ## [1] 13.2037
@@ -435,8 +439,12 @@ mysqrt(16) #does not show conditionals</code></pre>
 ## [1] 4
 ## [1] 4.041319e-08</code></pre>
 <pre><code>## [1] 4</code></pre>
+<pre class="r"><code>mysqrt(-16) </code></pre>
+<pre><code>## [1] &quot;BAD. DO NOT USE NEGATIVES&quot;</code></pre>
 <pre class="r"><code>mysqrt(49)</code></pre>
 <pre><code>## [1] 7</code></pre>
+<pre class="r"><code>mysqrt(-49)</code></pre>
+<pre><code>## [1] &quot;BAD. DO NOT USE NEGATIVES&quot;</code></pre>
 <pre class="r"><code>mysqrt(49, verbose=TRUE)</code></pre>
 <pre><code>## [1] FALSE
 ## [1] 14.40741
@@ -459,6 +467,8 @@ mysqrt(16) #does not show conditionals</code></pre>
 <pre><code>## [1] 7</code></pre>
 <pre class="r"><code>mysqrt(361)</code></pre>
 <pre><code>## [1] 19</code></pre>
+<pre class="r"><code>mysqrt(-361)</code></pre>
+<pre><code>## [1] &quot;BAD. DO NOT USE NEGATIVES&quot;</code></pre>
 <pre class="r"><code>mysqrt(361, verbose=TRUE)</code></pre>
 <pre><code>## [1] FALSE
 ## [1] 20.18519
@@ -478,6 +488,8 @@ mysqrt(16) #does not show conditionals</code></pre>
 <pre><code>## [1] 19</code></pre>
 <pre class="r"><code>mysqrt(10000)</code></pre>
 <pre><code>## [1] 100</code></pre>
+<pre class="r"><code>mysqrt(-10000)</code></pre>
+<pre><code>## [1] &quot;BAD. DO NOT USE NEGATIVES&quot;</code></pre>
 <pre class="r"><code>mysqrt(10000, verbose=TRUE)</code></pre>
 <pre><code>## [1] FALSE
 ## [1] 198.6852
@@ -503,6 +515,8 @@ mysqrt(16) #does not show conditionals</code></pre>
 <pre><code>## [1] 100</code></pre>
 <pre class="r"><code>mysqrt(810000)</code></pre>
 <pre><code>## [1] 900</code></pre>
+<pre class="r"><code>mysqrt(-810000)</code></pre>
+<pre><code>## [1] &quot;BAD. DO NOT USE NEGATIVES&quot;</code></pre>
 <pre class="r"><code>mysqrt(810000, verbose=TRUE)</code></pre>
 <pre><code>## [1] FALSE
 ## [1] 15013.5

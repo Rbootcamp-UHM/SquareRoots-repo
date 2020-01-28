@@ -61,6 +61,8 @@ mysqrt <- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  #This sets u
 
 	newguess <- myguess #renames myguess to newguess
 	newguess  #check
+	
+	if (x>0) { #this makes it so you cannot use negatives in the input, and if you do, you get a custom error message
 	approxy <- x/newguess #divides x by newguess and renames approxy
 	approxy #check
 	newguess <- (newguess+approxy)/2 #divides the sum of new guess and approxy by 2 and renaming to newguess.
@@ -81,7 +83,9 @@ mysqrt <- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  #This sets u
 	  if (verbose==T) {print(newguess)} #if the user wanted, this function would print the value of newguess.
 	  if (verbose==T) {print(error)} #if the user wanted, this function would print the value of the error.
 	}
-	return( newguess ) #
+	return( newguess ) # 
+	}else print("BAD. DO NOT USE NEGATIVES") #this is the custom error message
+
 }
 
 
@@ -89,13 +93,18 @@ mysqrt <- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  #This sets u
 
 mysqrt(16) #does not show conditionals
 mysqrt(16, verbose=TRUE) #shows conditionals
+mysqrt(-16) #does not show conditionals
 mysqrt(49)
+mysqrt(-49)
 mysqrt(49, verbose=TRUE)
 mysqrt(361)
+mysqrt(-361)
 mysqrt(361, verbose=TRUE)
 mysqrt(10000)
+mysqrt(-10000)
 mysqrt(10000, verbose=TRUE)
 mysqrt(810000)
+mysqrt(-810000)
 mysqrt(810000, verbose=TRUE)
 
 
