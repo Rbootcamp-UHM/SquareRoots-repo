@@ -1,0 +1,47 @@
+---
+title: "Square Root Function"
+author: "Kira Webster"
+date: "2020-01-27"
+output: html_document
+---
+# The Function
+We begin the function with starting parameters. We then create an absolute value function for the x input so that it will work with negative numbers. We must rename myguess in the begining so as it cycles through guesses it does not keep going back to the first guess. We get our approximate number that might be the root, and use that to calculate your new guess from your previous guess. Next, we calculate error as the difference between our guess and the approximate number. We must calculate the absolute value of the error to correctly assess if it is under the tolerance. If the tolerance is higher than the error at this point, that is how we want it to be, so it is safe to print the values for error<tol, newguess, and error. If error is greater than tolerance, meaning we are not done with our guesses, then we must cycle through again. The absolute value step is crucial here because if it is left out, the function will not run after one round and will just return its newest guess from this round, not the actual square root. Once we get an error under the tolerance, it can print the values. When you enter mysqrt(), the value that will appear is the newest guess that is under the tolerance of error.
+
+```{r}
+mysqrt <- function( x=81, tol=.00001, myguess=10, verbose=FALSE){
+	if(x<0) {						
+		x <- abs(x)
+	}
+	newguess <- myguess		
+	approx <- x/newguess	
+	newguess <- (newguess + approx)/2		
+	error <- newguess - approx		 
+	error <- abs(error) 	
+	error < tol		
+	 if (verbose == T) {print(error < tol)} 
+	 if (verbose == T) {print(newguess)}
+	 if (verbose == T) {print(error)}
+
+	while ( error > tol ) { 		
+	  approx <- x/newguess		
+	  newguess <- (newguess+approx)/2 		
+	  error <- newguess - approx	  
+	  error <- abs(error) 		
+	  if (verbose == T) {print(error < tol)} 		
+	  if (verbose == T) {print(newguess)}
+	  if (verbose == T) {print(error)}
+	}
+	return(newguess)		
+}
+```
+
+## Testing the Function
+To test the function, we first enter it as it. Then we test a negative number, then test a large number and a small guess to ensure that the function will run as many times is necessary. We finish out by testing giving it the same number for x and for the guess, and testing giving it the answer as the guess to start with.
+
+```{r}
+mysqrt()			
+mysqrt(x=-81)		
+mysqrt(x=625, myguess=5)		
+mysqrt(x=100, myguess=100)	
+mysqrt(x=100, myguess=10)		
+```
