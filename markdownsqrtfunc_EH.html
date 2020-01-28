@@ -390,7 +390,7 @@ summary {
     if(verbose==TRUE) {print(paste(&quot;approximate y:&quot;, approxy))} #This is a conditional the prints the approxy from the algorithm above for the first round if verbose==TRUE
     if(verbose==TRUE) {print(paste(&quot;guess Y:&quot;, newguess))} #This is a conditional the prints the new guess from the algorithm above for the first round if verbose==TRUE
 
-    while(error &gt; tol) { #This is the while loop that will recalculate the &quot;error&quot; value until it under the tolerance specifed in the argument &quot;tol&quot;.
+    while(error &gt; tol) { #This is the while loop that will recalculate the &quot;error&quot; value until it is under the tolerance specifed in the argument &quot;tol&quot;.
         approxy &lt;- x/newguess
         newguess &lt;- (newguess + approxy)/2 
         error &lt;- newguess-approxy
@@ -403,7 +403,7 @@ summary {
 </div>
 <div id="the-function-in-action" class="section level1">
 <h1>The Function in Action</h1>
-<p>The x variable is number you want to square root, and the default behavior of the argument “verbose” is set to FALSE:</p>
+<p>The “x” argument is number you want to square root, and the default behavior of the argument “verbose” is set to FALSE:</p>
 <pre class="r"><code>mysqrt(x=4)</code></pre>
 <pre><code>## [1] 2</code></pre>
 <p>This will also work because I have set x as the first argument:</p>

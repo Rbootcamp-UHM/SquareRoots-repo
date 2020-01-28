@@ -10,7 +10,7 @@ mysqrt <- function(x, myguess=10, tol=.000001, verbose=FALSE) { #This sets the d
 	if(verbose==TRUE) {print(paste("approximate y:", approxy))} #This is a conditional the prints the approxy from the algorithm above for the first round if verbose==TRUE
 	if(verbose==TRUE) {print(paste("guess Y:", newguess))} #This is a conditional the prints the new guess from the algorithm above for the first round if verbose==TRUE
 
-	while(error > tol) { #This is the while loop that will recalculate the "error" value until it under the tolerance specifed in the argument "tol".
+	while(error > tol) { #This is the while loop that will recalculate the "error" value until it is under the tolerance specifed in the argument "tol".
 		approxy <- x/newguess
 		newguess <- (newguess + approxy)/2 
 		error <- newguess-approxy
