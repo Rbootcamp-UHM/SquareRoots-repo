@@ -45,3 +45,6 @@ mysqrt(-3)
 #In addition, we can test zero.
 mysqrt(0)
 #This will also return an error message.
+
+#The function will also prevent you from making a guess that is a negative value.
+mysqrt(81, myguess=-9)
