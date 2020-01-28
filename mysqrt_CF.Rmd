@@ -25,7 +25,7 @@ mysqrt <- function( x=81, tol=.00001, myguess=27, verbose=FALSE){
 	approxy <- x/newguess #test your guess
 	newguess <- (newguess+approxy)/2 
 	error = newguess - approxy #find error between newguess and approx y
-	abs(error) #make sure the error is not a negative value
+	error <- abs(error) #make sure the error is not a negative value
 	error > tol #is the error greater than the tolerance?
 	
 	#Make some default returns for "unfriendly" square root values

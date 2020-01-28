@@ -387,7 +387,7 @@ body {background-color: lightsalmon;}
     approxy &lt;- x/newguess #test your guess
     newguess &lt;- (newguess+approxy)/2 
     error = newguess - approxy #find error between newguess and approx y
-    abs(error) #make sure the error is not a negative value
+    error &lt;- abs(error) #make sure the error is not a negative value
     error &gt; tol #is the error greater than the tolerance?
     
     #Make some default returns for &quot;unfriendly&quot; square root values
