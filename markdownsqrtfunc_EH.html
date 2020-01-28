@@ -378,7 +378,7 @@ summary {
 <div id="the-function" class="section level1">
 <h1>The Function</h1>
 <p>Here we have the function in all of its glory. I have included the explanation for each line in the comments within the code:</p>
-<pre class="r"><code>mysqrt &lt;- function(x, myguess=10, tol=.000001, verbose=FALSE) { #This sets the default parameters of the function
+<pre class="r"><code>mysqrt &lt;- function(x, myguess=10, tol=.000001, verbose=FALSE) { #This sets the default arguments of the function
     x &lt;- if(x &lt; 0){return(&quot;Stop! That&#39;s illegal. This function will not allow you to take the square root of a negative number&quot;)} else if(x==0) {return(0)} else{x} #This line filters the x input to only allow the function to take square roots of postive numbers. If the input passes this test, then it the function will determine if the input is &quot;0&quot;. If the input is &quot;0&quot; then the function will return &quot;0&quot; becuase the square root of &quot;0&quot; is &quot;0&quot;. If the input is greater than &quot;0&quot;, the input will be stored as &quot;x&quot;. 
     newguess &lt;- if(myguess &lt; 0){return(&quot;Stop! That&#39;s illegal. The square root of a number cannot be negative&quot;)} else{myguess} #This line filters the inputs to only allow the function to accept guesses that are postive numbers. 
     approxy &lt;- x/newguess 

@@ -1,4 +1,4 @@
-mysqrt <- function(x, myguess=10, tol=.000001, verbose=FALSE) { #This sets the default parameters of the function
+mysqrt <- function(x, myguess=10, tol=.000001, verbose=FALSE) { #This sets the default arguments of the function
 	x <- if(x < 0){return("Stop! That's illegal. This function will not allow you to take the square root of a negative number")} else if(x==0) {return(0)} else{x} #This line filters the x input to only allow the function to take square roots of postive numbers. If the input passes this test, then it the function will determine if the input is "0". If the input is "0" then the function will return "0" becuase the square root of "0" is "0". If the input is greater than "0", the input will be stored as "x". 
 	newguess <- if(myguess < 0){return("Stop! That's illegal. The square root of a number cannot be negative")} else{myguess} #This line filters the inputs to only allow the function to accept guesses that are postive numbers. 
 	approxy <- x/newguess 
