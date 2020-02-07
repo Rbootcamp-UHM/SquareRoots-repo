@@ -382,19 +382,21 @@ p    {color: white; font-family: verdana;}
 <p>
 <p>Hello! This page is Izzy’s Homework 3 for R Bootcamp.</p>
 <p>On this page, you will find my code and examples of a custom Square Root Function.</p>
-<pre class="r"><code>mysqrt &lt;- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  #This sets up the function and its arguments. It establishes the x and myguess (which both are used to find the square root), the tolerance (which is the amount of deviation allowed from the actual answer), and verbose (which if turned off will not show all the output of the conditionals (default), but if TRUE will show). 
+<p>To use this function, you input an x, myguess (which both are used to find the square root), the tolerance (which is the amount of deviation allowed from the actual answer), and verbose (which if turned off will not show all the output of the conditionals (default), but if TRUE will show). Additionally, this function works by taking the value for myguess and getting closer and closer to the square root value until it is within the error range you set. This will get you to the correct square root for your input! Below the function definition, you will find examples of this function in use.</p>
+<p>Lastly, because you cannot input negatives into a square root, you will recieve an error message if you try.</p>
+<p>Have fun using this square root function!</p>
+<pre class="r"><code>mysqrt &lt;- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  
 
     newguess &lt;- myguess 
-    newguess  
     
-    if (x&gt;0) {
+    if (x&gt;0) { 
+    
     approxy &lt;- x/newguess 
-    approxy 
     newguess &lt;- (newguess+approxy)/2 
-    newguess 
     error = newguess - approxy 
     error &lt;- abs(error) 
     error &lt; tol 
+    
     if (verbose==T) {print(error &lt; tol)} 
     if (verbose==T) {print(newguess)} 
     if (verbose==T) {print(error)} 
@@ -403,11 +405,12 @@ p    {color: white; font-family: verdana;}
       approxy &lt;- x/newguess  
       newguess &lt;- (newguess+approxy)/2  
       error = newguess - approxy 
-      error &lt;- abs(error)
+      error &lt;- abs(error)  
       if (verbose==T) {print(error &lt; tol)} 
       if (verbose==T) {print(newguess)} 
       if (verbose==T) {print(error)} 
     }
+    
     return( newguess ) 
     }else print(&quot;BAD. DO NOT USE NEGATIVES&quot;) 
 
@@ -439,7 +442,7 @@ mysqrt(16) </code></pre>
 ## [1] 4
 ## [1] 4.041319e-08</code></pre>
 <pre><code>## [1] 4</code></pre>
-<pre class="r"><code>mysqrt(-16) </code></pre>
+<pre class="r"><code>mysqrt(-16)</code></pre>
 <pre><code>## [1] &quot;BAD. DO NOT USE NEGATIVES&quot;</code></pre>
 <pre class="r"><code>mysqrt(49)</code></pre>
 <pre><code>## [1] 7</code></pre>

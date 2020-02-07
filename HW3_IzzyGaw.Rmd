@@ -23,22 +23,30 @@ Hello! This page is Izzy's Homework 3 for R Bootcamp.
 
 On this page, you will find my code and examples of a custom Square Root Function.
  
+To use this function, you input an x, myguess (which both are used to find the square root), the tolerance (which is the amount of deviation allowed from the actual answer), and verbose (which if turned off will not show all the output of the conditionals (default), but if TRUE will show). 
+Additionally, this function works by taking the value for myguess and getting closer and closer to the square root value until it is within the error range you set. 
+This will get you to the correct square root for your input! Below the function definition, you will find examples of this function in use.
+
+
+Lastly, because you cannot input negatives into a square root, you will recieve an error message if you try.
+
+Have fun using this square root function! 
+
 
 ```{r}
 
-mysqrt <- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  #This sets up the function and its arguments. It establishes the x and myguess (which both are used to find the square root), the tolerance (which is the amount of deviation allowed from the actual answer), and verbose (which if turned off will not show all the output of the conditionals (default), but if TRUE will show). 
+mysqrt <- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  
 
 	newguess <- myguess 
-	newguess  
 	
-	if (x>0) {
+	if (x>0) { 
+	
 	approxy <- x/newguess 
-	approxy 
 	newguess <- (newguess+approxy)/2 
-	newguess 
 	error = newguess - approxy 
 	error <- abs(error) 
 	error < tol 
+	
 	if (verbose==T) {print(error < tol)} 
 	if (verbose==T) {print(newguess)} 
 	if (verbose==T) {print(error)} 
@@ -47,11 +55,12 @@ mysqrt <- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  #This sets u
 	  approxy <- x/newguess  
 	  newguess <- (newguess+approxy)/2  
 	  error = newguess - approxy 
-	  error <- abs(error)
+	  error <- abs(error)  
 	  if (verbose==T) {print(error < tol)} 
 	  if (verbose==T) {print(newguess)} 
 	  if (verbose==T) {print(error)} 
 	}
+	
 	return( newguess ) 
 	}else print("BAD. DO NOT USE NEGATIVES") 
 
@@ -60,7 +69,7 @@ mysqrt <- function( x=81, tol=.000001, myguess=27, verbose=FALSE){  #This sets u
 
 mysqrt(16) 
 mysqrt(16, verbose=TRUE) 
-mysqrt(-16) 
+mysqrt(-16)
 mysqrt(49)
 mysqrt(-49)
 mysqrt(49, verbose=TRUE)
@@ -73,4 +82,5 @@ mysqrt(10000, verbose=TRUE)
 mysqrt(810000)
 mysqrt(-810000)
 mysqrt(810000, verbose=TRUE)
+
 ```
